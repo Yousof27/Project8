@@ -18,7 +18,7 @@ document.querySelectorAll('.setting .random-background .selection span').forEach
 setInterval(() => {
     if (localStorage.randomBg === 'Yes') {
         // Select Random Background
-        document.querySelector('main').style.backgroundImage = `url(../imgs/0${Math.floor(Math.random() * 5 + 1)}.jpg)`;
+        document.querySelector('#home').style.backgroundImage = `url('imgs/0${Math.floor(Math.random() * 5 + 1)}.jpg')`;
     }
 }, 10000);
 
@@ -170,7 +170,7 @@ document.onscroll = () => {
         startCount = true;
         count();
         progressSpans.forEach(span => {
-            span.style.width = `${span.dataset.progress}`;
+            span.style.width = `${span.dataset.progress}%`;
         })
     } else if (top > percent2 || percent < 40) {
         progressKey = true;
@@ -185,6 +185,15 @@ document.onscroll = () => {
         goTopBtn.classList.remove('no');
     } else {
         goTopBtn.classList.add('no')
+    }
+
+
+    
+    // Projects Section Animation
+    let projectsSection = document.querySelector('section.projects');
+
+    if (top > projectsSection.offsetTop - windowHeight + 50) {
+        projectsSection.classList.add('open');
     }
 }
 
@@ -233,17 +242,19 @@ function activeToggle(span) {
 function count() {
     if (startCount && progressKey) {
         progressKey = false;
-        let c = 0;
-        let counter = setInterval(() => {
-            progressSpans.forEach(span => {
-                span.setAttribute('content', c);
-            })
-            c++;
-            startCount = false;
-            if (c > 100) {
-                clearInterval(counter);
-            }
-        }, 7);
+
+        progressSpans.forEach(span => {
+            let c = 0;
+            let counter = setInterval(() => {
+                if (c <= +span.dataset.progress) {
+                    span.setAttribute('content', c);
+                    c++
+                } else {
+                    clearInterval(counter);
+                }
+            }, 7);
+        })
+        startCount = false;
     }
 }
 

@@ -491,7 +491,7 @@ main .text {
     left: 50%;
     z-index: 2;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 80%;
     text-align: center;
     padding: 30px;
 }
@@ -736,15 +736,25 @@ main .text p {
     padding-bottom: 70px;
 }
 
-.projects .container::after {
+.projects .container::before {
     content: '';
     position: absolute;
-    height: calc(100% - 100px);
     width: 2px;
+    height: 0;
     top: 50px;
     left: calc(50% - 1px);
     background-color: var(--main-color);
-    z-index: 9;
+    z-index: 1;
+}
+
+.projects.open .container::before {
+    animation: timeline 0.7s ease-in-out 0.5s both;
+}
+
+@keyframes timeline {
+    to {
+        height: calc(100% - 100px);
+    }
 }
 
 .projects .container .group span {
@@ -757,12 +767,61 @@ main .text p {
     color: white;
     padding: 3px 6px;
     font-weight: bold;
+    transform: scale(0);
+}
+
+.projects.open .container .group span {
+    animation: icons 0.3s cubic-bezier(0.475, -0.065, 0.400, 1.525) 2.7s both;
+}
+
+@keyframes icons {
+    to {
+        transform: scale(1);
+    }
 }
 
 .projects .container .group .box {
     padding: 20px;
     background-color: white;
     position: relative;
+    z-index: 100;
+    opacity: 0;
+}
+
+.projects .container .group:first-of-type .box:first-of-type {
+    transform: translateY(-50px);
+}
+
+.projects .container .group:first-of-type .box:last-of-type {
+    transform: translateY(calc(-100% - 100px));
+}
+
+.projects .container .group:last-of-type .box:first-of-type {
+    transform: translateY(calc(-200% - 165px));
+}
+
+.projects .container .group:last-of-type .box:last-of-type {
+    transform: translateY(calc(-300% - 215px));
+}
+
+@keyframes boxMove {
+    100% {
+        transform: translate(0px);
+    }
+}
+
+.projects.open .container .group .box:first-of-type {
+    animation: boxMove 0.7s cubic-bezier(0.475, -0.065, 0.400, 1.525) 1.9s both, boxShow 0.5s ease-in 1.3s both;
+}
+
+.projects.open .container .group .box:last-of-type {
+    animation: boxMove 0.7s cubic-bezier(0.475, -0.065, 0.400, 1.525) 1.9s both, boxShow 0.7s ease-in 1.3s both;
+}
+
+@keyframes boxShow {
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (min-width: 767px) {
@@ -802,13 +861,18 @@ main .text p {
     width: 14px;
     height: 14px;
     background-color: white;
-    border: 3px solid var(--main-color);
+    border: 2px solid var(--main-color);
     border-radius: 50%;
     z-index: 10;
+    transform: scale(0);
+}
+
+.projects.open .container .group .box::before {
+    animation: icons 0.3s cubic-bezier(0.475, -0.065, 0.400, 1.525) 2.7s both;
 }
 
 .projects .container .group .box:first-of-type::before {
-    right: -34px;
+    right: -33px;
 }
 
 .projects .container .group .box:last-child::before {
