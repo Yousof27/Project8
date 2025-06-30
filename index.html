@@ -71,7 +71,7 @@
     <header>
         <div class="container">
             <div class="logo">Special Design</div>
-            <nav>
+            <nav aria-label="Primary">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -117,7 +117,7 @@
                     totam iure mollitia consequatur!</p>
             </div>
             <div class="image">
-                <img src="imgs/about-us.jpg" alt="image">
+                <img src="imgs/about-us.jpg" alt="image" loading="lazy">
             </div>
         </div>
     </section>
@@ -178,16 +178,16 @@
         <div class="container">
             <h2 class="main-title">our gallery</h2>
             <div class="img-con">
-                <img src="imgs/01.jpg" alt="Image 1">
-                <img src="imgs/02.jpg" alt="Image 2">
-                <img src="imgs/03.jpg" alt="Image 3">
-                <img src="imgs/04.jpg" alt="Image 4">
-                <img src="imgs/05.jpg" alt="Image 5">
-                <img src="imgs/06.png" alt="Image 6">
-                <img src="imgs/07.jpg" alt="Image 7">
-                <img src="imgs/08.jpg" alt="Image 8">
-                <img src="imgs/09.jpg" alt="Image 9">
-                <img src="imgs/10.jpg" alt="Image 10">
+                <img src="imgs/01.jpg" alt="Image 1" loading="lazy">
+                <img src="imgs/02.jpg" alt="Image 2" loading="lazy">
+                <img src="imgs/03.jpg" alt="Image 3" loading="lazy">
+                <img src="imgs/04.jpg" alt="Image 4" loading="lazy">
+                <img src="imgs/05.jpg" alt="Image 5" loading="lazy">
+                <img src="imgs/06.png" alt="Image 6" loading="lazy">
+                <img src="imgs/07.jpg" alt="Image 7" loading="lazy">
+                <img src="imgs/08.jpg" alt="Image 8" loading="lazy">
+                <img src="imgs/09.jpg" alt="Image 9" loading="lazy">
+                <img src="imgs/10.jpg" alt="Image 10" loading="lazy">
             </div>
         </div>
     </section>
@@ -240,32 +240,32 @@
             <div class="main-title">our features</div>
             <div class="box-con">
                 <div class="box">
-                    <img src="imgs/programming.svg" alt="img">
+                    <img src="imgs/programming.svg" alt="img" loading="lazy">
                     <h4>Development</h4>
                     <p>We are professional marketeers, we will do anything you imagine in no time.</p>
                 </div>
                 <div class="box">
-                    <img src="imgs/advertising.svg" alt="img">
+                    <img src="imgs/advertising.svg" alt="img" loading="lazy">
                     <h4>Marketing</h4>
                     <p>We are professional marketeers, we will do anything you imagine in no time.</p>
                 </div>
                 <div class="box">
-                    <img src="imgs/hosting-icon.svg" alt="img">
+                    <img src="imgs/hosting-icon.svg" alt="img" loading="lazy">
                     <h4>Hosting</h4>
                     <p>We are professional marketeers, we will do anything you imagine in no time.</p>
                 </div>
                 <div class="box">
-                    <img src="imgs/mobile-app.svg" alt="img">
+                    <img src="imgs/mobile-app.svg" alt="img" loading="lazy">
                     <h4>Mobile Develope</h4>
                     <p>We are professional marketeers, we will do anything you imagine in no time.</p>
                 </div>
                 <div class="box">
-                    <img src="imgs/graphic-design.svg" alt="img">
+                    <img src="imgs/graphic-design.svg" alt="img" loading="lazy">
                     <h4>Cloud and Servers</h4>
                     <p>We are professional marketeers, we will do anything you imagine in no time.</p>
                 </div>
                 <div class="box">
-                    <img src="imgs/web-design.svg" alt="img">
+                    <img src="imgs/web-design.svg" alt="img" loading="lazy">
                     <h4>Seo</h4>
                     <p>We are professional marketeers, we will do anything you imagine in no time.</p>
                 </div>
@@ -283,7 +283,7 @@
             <div class="box-con">
                 <div class="box">
                     <div class="info">
-                        <img src="imgs/businessman (1).jpg" alt="img">
+                        <img src="imgs/businessman (1).jpg" alt="img" loading="lazy">
                         <div class="text">
                             <h2>Ahmed Mosaad</h2>
                             <p>CEO At Company</p>
@@ -295,7 +295,7 @@
                 </div>
                 <div class="box">
                     <div class="info">
-                        <img src="imgs/businessman (2).jpg" alt="img">
+                        <img src="imgs/businessman (2).jpg" alt="img" loading="lazy">
                         <div class="text">
                             <h2>Mohamed Ibrahim</h2>
                             <p>CEO At Company</p>
@@ -307,7 +307,7 @@
                 </div>
                 <div class="box">
                     <div class="info">
-                        <img src="imgs/businessman (3).jpg" alt="img">
+                        <img src="imgs/businessman (3).jpg" alt="img" loading="lazy">
                         <div class="text">
                             <h2>Sherief Ashraf</h2>
                             <p>CEO At Company</p>
@@ -331,14 +331,15 @@
             <h2 class="main-title">contact us</h2>
             <form>
                 <div class="left">
-                    <input type="text" placeholder="Your Name">
-                    <input type="number" placeholder="Your Phone">
-                    <input type="email" placeholder="Your Email">
-                    <input type="text" placeholder="Your Subject">
+                    <input type="text" placeholder="Your Name" name="name" required autocomplete="name">
+                    <input type="tel" name="phone" placeholder="Your Phone" required autocomplete="tel"
+                        pattern="[0-9]{10,15}" title="Please enter a valid phone number" />
+                    <input type="email" name="email" placeholder="Your Email" required autocomplete="email" />
+                    <input type="text" name="subject" placeholder="Your Subject" required autocomplete="off" />
                 </div>
                 <div class="right">
-                    <textarea name="message" placeholder="Your Message"></textarea>
-                    <input type="button" value="Send">
+                    <textarea name="message" placeholder="Your Message" required rows="5" autocomplete="off"></textarea>
+                    <input type="submit" value="Send">
                 </div>
             </form>
         </div>

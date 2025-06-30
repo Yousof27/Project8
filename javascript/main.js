@@ -224,7 +224,7 @@ function showImage(src, alt) {
     <div class="popup-overlay"></div>
     <div class="popup-box">
         <h3 class="title">${alt.toLocaleLowerCase()}</h3>
-        <img src="${src}" alt="img">
+        <img src="${src}" alt="img" loading="lazy">
         <span><i class="fa-solid fa-xmark"></i></span>
     </div>
     `;
