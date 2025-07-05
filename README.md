@@ -21,5 +21,5 @@ Built a user profile interface with personalized settings using HTML5, CSS3, and
 
 - **Youssef Kamal**
 - [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/youssef-kamal-1-front-end-dev)
-- [![GitHub](https://img.shields.io/badge/GitHub-000?style=flat&logo=github&logoColor=white)](https://github.com/youssef-kamal)
+- [![GitHub](https://img.shields.io/badge/GitHub-000?style=flat&logo=github&logoColor=white)](https://github.com/Yousof27)
 - 📧 Email: yousofkamal24@gmail.com
