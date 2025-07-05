@@ -1,6 +1,6 @@
-# 🚀 Project 8
+# 🚀 Project 8 - Elzero JavaScript Profile
 
-Elzero JavaScript Project
+Built a user profile interface with personalized settings using HTML5, CSS3, and JavaScript. Implemented color themes, layout preferences, and other options with LocalStorage to persist user data. Focused on DOM manipulation, state handling, and real-time UI updates.
 
 <br/>
 
